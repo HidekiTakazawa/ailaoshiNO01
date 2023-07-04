@@ -1971,11 +1971,18 @@
   var voices = speechSynthesis.getVoices();
   var osAndroid = false;
   var ua = window.navigator.userAgent.toLocaleLowerCase();
-  if (ua.indexOf("android") !== -1  || ua.indexOf("ipad") !== -1 || ua.indexOf("iphone") !== -1) {
-    osAndroid = true;
-    console.log(ua);
-    console.log(ua.indexOf("android"));
-  } 
+  // 2023-07-03 ファーウェイスマホ対応変更
+  if (ua.indexOf("windows") !== -1) {
+          osAndroid = false;
+          console.log(ua);
+          console.log(ua.indexOf("windows"));
+        } else {
+          osAndroid = true;
+          console.log(ua);
+          console.log(ua.indexOf("android"));
+
+        }
+    // 2023-07-03 ファーウェイスマホ対応変更
   
   
   
